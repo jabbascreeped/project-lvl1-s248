@@ -1,6 +1,6 @@
 {
   "name": "drain-brain-games",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "first project at hexlet",
   "main": "index.js",
   "bin": {
@@ -10,7 +10,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline", 
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "babel-node": "babel-node",
     "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,5 +22,8 @@
     "babel-preset-stage-0": "*"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.9"
+  }
 }
