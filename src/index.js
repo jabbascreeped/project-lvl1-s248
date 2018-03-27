@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import { car, cdr } from 'hexlet-pairs';
 
 let yourName = '';
 export const nameUser = () => {
@@ -7,7 +8,6 @@ export const nameUser = () => {
 };
 export const helloUser = () => console.log(`Hello, ${yourName}!`);
 export const welcomeMessage = () => console.log('Welcome to the Brain Games!');
-export const rulesBrainEven = () => console.log('Answer "yes" if number even otherwise answer "no".');
 const success = () => console.log(`Congratulations, ${yourName}`);
 const askQuestion = x => console.log(`Question: ${x}`);
 const giveAnswer = () => readlineSync.question('Your answer: ');
@@ -16,12 +16,12 @@ const wrongAnswer = (x, y) => {
   console.log(`'${x}' is wrong answer ;(. Correct answer was '${y}'.`);
   console.log(`Let's try again, ${yourName}!`);
 };
-export const gameEven = () => {
+export const playGame = (x) => {
   let count = 0;
   for (; count < 3;) {
-    const number = Math.floor(Math.random() * 1000);
-    const expectedAnswer = number % 2 === 0 ? 'yes' : 'no';
-    askQuestion(number);
+    const useQuizPair = x();
+    askQuestion(car(useQuizPair));
+    const expectedAnswer = cdr(useQuizPair);
     const userAnswer = giveAnswer();
     if (userAnswer === expectedAnswer) {
       correctAnswer();
