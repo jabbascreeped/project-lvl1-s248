@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { car, cdr, cons, toString } from 'hexlet-pairs';
+import { car, cdr, cons } from 'hexlet-pairs';
 
 let yourName = '';
 export const nameUser = () => {
