@@ -1,9 +1,10 @@
 import { cons } from 'hexlet-pairs';
+import { playGame } from '..';
 
-export const rulesBrainCalc = () => console.log('What is the result of the expression?');
-export const calc = () => {
-  const number1 = Math.floor(Math.random() * 100);
-  const number2 = Math.floor(Math.random() * 100);
+const rules = 'What is the result of the expression?';
+const calc = () => {
+  const number1 = Math.floor(Math.random() * 10);
+  const number2 = Math.floor(Math.random() * 10);
   const doTheMath = Math.floor(Math.random() * 3);
   switch (doTheMath) {
     case 0: {
@@ -28,4 +29,5 @@ export const calc = () => {
   }
   return false;
 };
-calc();
+const playCalc = () => playGame(calc, rules);
+export default playCalc;

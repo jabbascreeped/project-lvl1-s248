@@ -6,9 +6,10 @@ export const nameUser = () => {
   yourName = readlineSync.question('May I have your name? ');
   return yourName;
 };
+const gameRules = x => console.log(x);
 export const helloUser = () => console.log(`Hello, ${yourName}!`);
 export const welcomeMessage = () => console.log('Welcome to the Brain Games!');
-const success = () => console.log(`Congratulations, ${yourName}`);
+const success = () => console.log(`Congratulations, ${yourName}!`);
 const askQuestion = x => console.log(`Question: ${x}`);
 const giveAnswer = () => readlineSync.question('Your answer: ');
 const correctAnswer = () => console.log('Correct!');
@@ -16,7 +17,10 @@ const wrongAnswer = (x, y) => {
   console.log(`'${x}' is wrong answer ;(. Correct answer was '${y}'.`);
   console.log(`Let's try again, ${yourName}!`);
 };
-export const playGame = (x) => {
+export const playGame = (x, y) => {
+  welcomeMessage();
+  gameRules(y);
+  yourName = nameUser();
   let count = 0;
   for (; count < 3;) {
     const useQuizPair = x();

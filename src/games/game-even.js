@@ -1,6 +1,7 @@
 import { cons } from 'hexlet-pairs';
+import { playGame } from '..';
 
-export const rulesBrainEven = () => console.log('Answer "yes" if number even otherwise answer "no".');
+const rules = 'Answer "yes" if number even otherwise answer "no".';
 export const even = () => {
   const number = Math.floor(Math.random() * 1000);
   const question = `${number}`;
@@ -19,3 +20,5 @@ export const even = () => {
   }
   return false;
 };
+const playEven = () => playGame(even, rules);
+export default playEven;
