@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { car, cdr } from 'hexlet-pairs';
+import { car, cdr, cons, toString } from 'hexlet-pairs';
 
 let yourName = '';
 export const nameUser = () => {
@@ -21,21 +21,23 @@ export const playGame = (x, y) => {
   welcomeMessage();
   gameRules(y);
   yourName = nameUser();
-  let count = 0;
-  for (; count < 3;) {
-    const useQuizPair = x();
-    askQuestion(car(useQuizPair));
-    const expectedAnswer = cdr(useQuizPair);
-    const userAnswer = giveAnswer();
-    if (userAnswer === expectedAnswer) {
-      correctAnswer();
-      count += 1;
-    } else {
-      wrongAnswer(userAnswer, expectedAnswer);
-      return false;
+  const game = (playData, wins) => {
+    if (wins === 3) {
+      return success();
     }
-  }
-  if (count === 3) {
-    return success();
-  } return false;
+    const askAndCheck = (f) => {
+      const useQuizPair = f();
+      askQuestion(car(useQuizPair));
+      const expectedAnswer = cdr(useQuizPair);
+      const userAnswer = giveAnswer();
+      return ((userAnswer === expectedAnswer) ? 1 : cons(userAnswer, expectedAnswer));
+    };
+    const questionResult = askAndCheck(playData);
+    if (questionResult === 1) {
+      correctAnswer();
+      return game(playData, wins + 1);
+    }
+    return wrongAnswer(car(questionResult), cdr(questionResult));
+  };
+  game(x, 0);
 };

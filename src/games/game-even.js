@@ -11,14 +11,12 @@ export const even = () => {
       const quizPair = cons(question, answer);
       return quizPair;
     }
-    case 1: {
+    default: {
       const answer = 'no';
       const quizPair = cons(question, answer);
       return quizPair;
     }
-    default: console.log('Error in even function, switch clause');
   }
-  return false;
 };
 const playEven = () => playGame(even, rules);
 export default playEven;

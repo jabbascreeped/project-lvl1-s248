@@ -18,3 +18,6 @@ start-calc:
 
 start-gcd:
 	npm run babel-node -- src/bin/brain-gcd.js
+
+start-balance:
+	npm run babel-node -- src/bin/brain-balance.js
