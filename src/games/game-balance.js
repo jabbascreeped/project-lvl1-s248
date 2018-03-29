@@ -4,7 +4,7 @@ import { playGame } from '..';
 const rules = 'Balance the given number.';
 const balance = () => {
   const number = Math.floor(Math.random() * 9999);
-  const question = String(number);
+  const question = (`Question: ${String(number)}`);
   const numberCount = question.length;
   let sum = 0;
   let answer = '';

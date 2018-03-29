@@ -8,19 +8,19 @@ const calc = () => {
   const chooseOperator = Math.floor(Math.random() * 3);
   switch (chooseOperator) {
     case 0: {
-      const question = `${number1} + ${number2}`;
+      const question = `Question: ${number1} + ${number2}`;
       const answer = number1 + number2;
       const quizPair = cons(question, String(answer));
       return quizPair;
     }
     case 1: {
-      const question = `${number1} - ${number2}`;
+      const question = `Question: ${number1} - ${number2}`;
       const answer = number1 - number2;
       const quizPair = cons(question, String(answer));
       return quizPair;
     }
     default: {
-      const question = `${number1} * ${number2}`;
+      const question = `Question: ${number1} * ${number2}`;
       const answer = number1 * number2;
       const quizPair = cons(question, String(answer));
       return quizPair;

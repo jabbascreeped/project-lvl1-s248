@@ -6,7 +6,7 @@ const progression = () => {
   const number1 = Math.floor(Math.random() * 50);
   const number2 = Math.floor(Math.random() * 50);
   const createQuizPair = (x, y) => {
-    let question = '';
+    let question = 'Question: ';
     let answer = 0;
     for (let count = 0; count < 10;) {
       if (count === 4) {
