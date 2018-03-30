@@ -10,7 +10,6 @@ const gameRules = x => console.log(x);
 export const helloUser = () => console.log(`Hello, ${yourName}!`);
 export const welcomeMessage = () => console.log('Welcome to the Brain Games!');
 const success = () => console.log(`Congratulations, ${yourName}!`);
-// const askQuestion = x => console.log(`Question: ${x}`);
 const giveAnswer = () => readlineSync.question('Your answer: ');
 const correctAnswer = () => console.log('Correct!');
 const wrongAnswer = (x, y) => {
@@ -27,7 +26,6 @@ export const playGame = (x, y) => {
     }
     const askAndCheck = (f) => {
       const useQuizPair = f();
-      // askQuestion(car(useQuizPair));
       console.log(car(useQuizPair));
       const expectedAnswer = cdr(useQuizPair);
       const userAnswer = giveAnswer();

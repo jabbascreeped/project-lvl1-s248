@@ -1,7 +1,7 @@
 import { cons } from 'hexlet-pairs';
 import { playGame } from '..';
 
-const rules = 'Answer "yes" if number even otherwise answer "no".';
+const rules = 'Answer "yes" if number even otherwise answer "no".\n';
 export const even = () => {
   const number = Math.floor(Math.random() * 1000);
   const question = (`Question: ${String(number)}`);

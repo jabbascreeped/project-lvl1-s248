@@ -1,7 +1,7 @@
 import { cons } from 'hexlet-pairs';
 import { playGame } from '..';
 
-const rules = 'Find the greatest common divisor of given numbers.';
+const rules = 'Find the greatest common divisor of given numbers.\n';
 export const gcd = () => {
   const number1 = Math.floor(Math.random() * 100);
   const number2 = Math.floor(Math.random() * 100);

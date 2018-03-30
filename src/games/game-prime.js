@@ -1,26 +1,20 @@
 import { cons } from 'hexlet-pairs';
 import { playGame } from '..';
 
-const rules = 'Answer if the number is prime or not.';
+const rules = 'Answer if the number is prime or not.\n';
 const prime = () => {
   const number = Math.floor((Math.random() * 198) + 2);
-  const check = (x) => {
-    if ((x % 2) === 0) {
-      return 0;
-    }
-    for (let checkDiv = 3; checkDiv < Math.sqrt(number);) {
-      if (checkDiv > 3 && (checkDiv % 3) === 0) {
-        checkDiv += 2;
-      } else {
-        if ((x % checkDiv) === 0) {
-          return 0;
-        } checkDiv += 2;
-      }
-    }
-    return 1;
+  const isNumberPrime = (numToCheck, divider) => {
+    if ((numToCheck % 2) === 0) {
+      return false;
+    } if (divider > Math.sqrt(number)) {
+      return true;
+    } if ((number % divider) === 0) {
+      return false;
+    } return isNumberPrime(number, divider + 2);
   };
   const question = (`Is this number prime? ${String(number)}`);
-  const answer = check(number) === 1 ? 'yes' : 'no';
+  const answer = isNumberPrime(number, 3) ? 'yes' : 'no';
   return cons(question, answer);
 };
 const playPrime = () => playGame(prime, rules);
