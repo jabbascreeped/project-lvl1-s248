@@ -2,9 +2,9 @@ import { cons } from 'hexlet-pairs';
 import { playGame } from '..';
 
 const rules = 'Answer if the number is prime or not.\n';
-const prime = () => {
+const getPairPrime = () => {
   const number = Math.floor((Math.random() * 198) + 2);
-  const isNumberPrime = (numToCheck, divider) => {
+  const isNumberPrime = (numToCheck, divider = 3) => {
     if ((numToCheck % 2) === 0) {
       return false;
     } if (divider > Math.sqrt(number)) {
@@ -14,8 +14,8 @@ const prime = () => {
     } return isNumberPrime(number, divider + 2);
   };
   const question = (`Is this number prime? ${String(number)}`);
-  const answer = isNumberPrime(number, 3) ? 'yes' : 'no';
+  const answer = isNumberPrime(number) ? 'yes' : 'no';
   return cons(question, answer);
 };
-const playPrime = () => playGame(prime, rules);
+const playPrime = () => playGame(getPairPrime, rules);
 export default playPrime;

@@ -2,7 +2,7 @@ import { cons } from 'hexlet-pairs';
 import { playGame } from '..';
 
 const rules = 'What number is missing in this progression?\n';
-const progression = () => {
+const getPairProgression = () => {
   const number1 = Math.floor(Math.random() * 50);
   const number2 = Math.floor(Math.random() * 50);
   const buildPair = (x, y, z) => {
@@ -19,5 +19,5 @@ const progression = () => {
     }; return cons(buildQuestion(x, y, z), buildAnswer(x, y, Math.floor(z / 2)));
   }; return buildPair(number1, number2, 10);
 };
-const playProgression = () => playGame(progression, rules);
+const playProgression = () => playGame(getPairProgression, rules);
 export default playProgression;

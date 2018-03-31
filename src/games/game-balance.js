@@ -2,7 +2,7 @@ import { cons } from 'hexlet-pairs';
 import { playGame } from '..';
 
 const rules = 'Balance the given number.\n';
-const balance = () => {
+const getPairBalance = () => {
   const number = String(Math.floor(Math.random() * 9999));
   const question = (`Question: ${number}`);
   const numberCount = number.length;
@@ -20,5 +20,5 @@ const balance = () => {
   const answer = findAnswer(number, numberCount, sumDigits(number, numberCount));
   return cons(question, answer);
 };
-const playBalance = () => playGame(balance, rules);
+const playBalance = () => playGame(getPairBalance, rules);
 export default playBalance;

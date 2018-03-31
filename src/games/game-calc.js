@@ -2,7 +2,7 @@ import { cons } from 'hexlet-pairs';
 import { playGame } from '..';
 
 const rules = 'What is the result of the expression?\n';
-const calc = () => {
+const getPairCalc = () => {
   const number1 = Math.floor(Math.random() * 10);
   const number2 = Math.floor(Math.random() * 10);
   const chooseOperator = Math.floor(Math.random() * 3);
@@ -27,5 +27,5 @@ const calc = () => {
     }
   }
 };
-const playCalc = () => playGame(calc, rules);
+const playCalc = () => playGame(getPairCalc, rules);
 export default playCalc;

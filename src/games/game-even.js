@@ -2,21 +2,17 @@ import { cons } from 'hexlet-pairs';
 import { playGame } from '..';
 
 const rules = 'Answer "yes" if number even otherwise answer "no".\n';
-export const even = () => {
+export const getPairEven = () => {
   const number = Math.floor(Math.random() * 1000);
   const question = (`Question: ${String(number)}`);
-  switch (number % 2) {
-    case 0: {
-      const answer = 'yes';
-      const quizPair = cons(question, answer);
-      return quizPair;
-    }
-    default: {
-      const answer = 'no';
-      const quizPair = cons(question, answer);
-      return quizPair;
-    }
-  }
+  const isNumberEven = (x) => {
+    if ((x % 2) === 0) {
+      return true;
+    } return false;
+  };
+  const answer = isNumberEven(number) ? 'yes' : 'no';
+  const quizPair = cons(question, answer);
+  return quizPair;
 };
-const playEven = () => playGame(even, rules);
+const playEven = () => playGame(getPairEven, rules);
 export default playEven;
