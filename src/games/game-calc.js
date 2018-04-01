@@ -1,7 +1,7 @@
 import { cons } from 'hexlet-pairs';
 import { playGame } from '..';
 
-const rules = 'What is the result of the expression?\n';
+const rules = 'What is the result of the expression?';
 const getPairCalc = () => {
   const number1 = Math.floor(Math.random() * 10);
   const number2 = Math.floor(Math.random() * 10);

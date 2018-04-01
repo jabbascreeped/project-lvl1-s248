@@ -1,6 +1,6 @@
 {
   "name": "drain-brain-games",
-  "version": "6.0.2",
+  "version": "6.0.3",
   "description": "first project at hexlet",
   "main": "index.js",
   "bin": {
